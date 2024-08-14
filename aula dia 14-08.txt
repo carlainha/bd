@@ -1,0 +1,20 @@
+aula 14/08
+exercicio pratico
+create database teste;
+
+use teste;
+
+create table funcionarios(
+	id int not null primary key auto_increment,
+    nome varchar(100),
+    idade int
+);
+
+insert into funcionarios (nome,idade) values ('Raul', 20);
+
+select * from funcionarios;
+
+update funcionarios set idade = 23 where nome = 'Raul';
+
+delete from funcionarios where nome= 'Raul';
+ 
