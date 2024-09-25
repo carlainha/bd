@@ -41,6 +41,6 @@ insert into pizza(nome,valor) values('Portuguesa',15);
 insert into pizza(nome,valor) values('Provolone',17);
 insert into pizza(nome,valor) values('4 Queijos',20);
 insert into pizza(nome,valor) values('Calabresa',17);
-insert into pizza(nome) values('Escarola');
+insert into pizza(nome,valor) values('Escarola,22');
 insert into cliente values (1,'(11) 1111-1111','Alexandre Santos', 'Rua das Palmeiras', 111, null,'Bela Vista','Em frente a ecola');
 
