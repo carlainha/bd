@@ -1,0 +1,56 @@
+Exercícios Teóricos
+
+1)a) A sigal DML significa linguagem de manipulação de dados utilizado para inserção, exclusão, atualização de dados nas tabelas. Os principais comandos são select, insert, update, delete.
+ 
+b)INSERT: usado para adicionar informações nas tabelas
+UPDATE: usado para atualização dos dados da tabela
+SELECT: usado para fazer consultas no banco de dados
+DELETE: usado para remover registros das tabelas
+
+2)A DDL é uma linguagem de computador usada para a definição de estrutura de dados, já a linguagem DML é a responsável pela manipulação de dados em um banco de dados. Usamos DDL para criar os bancos e tabelas, já a DML usamos para adicionar informações nas tabelas.
+
+3)Porque quando não usamos a cláusula where não especificamos qual campo deve ser modificado, e se não usarmos a cláusula podemos modificar a informação errada ou até mesmo excluir todas as informações do banco de dados
+
+4)Evite SELECT *
+Evite tabelas de caracteres curinga em excesso.
+Evitar tabelas fragmentadas por data.
+Evitar a fragmentação excessiva de tabelas.
+Elimine consultas particionadas.
+Reduzir os dados antes de usar um JOIN.
+Use a cláusula WHERE. 
+
+
+Exercícios Práticos e desafio
+
+create database exercicio;
+
+use exercicio;
+
+CREATE TABLE clientes (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100),
+  email VARCHAR(100),
+  idade INT,
+  cidade VARCHAR(50)
+);
+
+insert into clientes (nome,email,idade,cidade) values ('João da Silva', 'joao@gmail.com', 30,'São Paulo');
+insert into clientes (nome,email,idade,cidade) values ('Maria Oliveira', 'maria@yahoo.com', 25,'Campinas');
+insert into clientes (nome,email,idade,cidade) values ('Pedro Souza', 'pedro@outlook.com', 35,'Rio de Janeiro');
+
+select * from clientes where cidade like 'São Paulo';
+select nome,email from clientes where idade >30;
+
+update clientes set cidade='Sorocaba' where nome like 'Maria Oliveira';
+update clientes set email='cliente_rj@dominio.com' where cidade like 'Rio de Janeiro';
+
+delete from clientes where email='joao@gmail.com';
+delete from clientes where idade<30;
+
+alter table clientes add status varchar(10);
+
+update clientes set status='Ativo';
+
+select * from clientes where status like 'Ativo';
+
+update clientes set status='Inativo' where status like 'Ativo';
